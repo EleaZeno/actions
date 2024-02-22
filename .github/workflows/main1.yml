@@ -23,7 +23,7 @@ jobs:
 
       - name: Update README
         run: |
-          sed -i "s|!\[screenshot home\](.*)|![screenshot home](https://raw.githubusercontent.com/EleaZeno/actions/main/snapshot/$(basename ${{ steps.find_screenshot.outputs.latest_screenshot }}))|g" EleaZeno.github.io/README.md
+          sed -i "s|!\[screenshot home\](.*)|![screenshot home](https://raw.githubusercontent.com/EleaZeno/actions/main/snapshot/$(basename ../actions/snapshot/*.png))|g" EleaZeno.github.io/README.md
 
       - name: Commit and push changes
         run: |
