@@ -11,11 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          repository: EleaZeno/EleaZeno.github.io  # 指定要检出的仓库
+          path: EleaZeno.github.io  # 指定检出后存放的路径
 
       - name: Find latest screenshot
         id: find_screenshot
         run: |
-          latest_file=$(ls -t snapshot/*.png | head -n1)
+          latest_file=$(ls -t ../actions/snapshot/*.png | head -n1)
           echo "::set-output name=latest_screenshot::$latest_file"
 
       - name: Update README
@@ -30,4 +33,3 @@ jobs:
           git add README.md
           git commit -m "Update screenshot"
           git push
-
