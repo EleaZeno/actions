@@ -9,7 +9,7 @@ on:
   # 定时执行，这里 - cron 配置的就是一个定期执行的表达式
   # 0 0,6,12,18 * * * 表示的在0，6，12，18点整点执行，这里是ISO时间，和国内差8小时
   schedule:
-    - cron: '0 0,6,12,18 * * *'
+    - cron: '0 12 * * *'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 # 工作流内容
 jobs:
